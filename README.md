@@ -21,7 +21,7 @@ The main
 [repository](https://github.com/scarv/sca3s)
 acts as a general container for associated resources;
 this specific submodule houses
-a [CLI](https://en.wikipedia.org/wiki/Command-line_interface) which allows interaction with the front-end infrastructure *without* using the web-based UI.
+a [CLI](https://en.wikipedia.org/wiki/Command-line_interface) which allows interaction with the front-end infrastructure without using the web-based UI.*
 
 <!--- -------------------------------------------------------------------- --->
 
