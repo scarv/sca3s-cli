@@ -39,7 +39,24 @@ a [CLI](https://en.wikipedia.org/wiki/Command-line_interface) which allows inter
 
 <!--- -------------------------------------------------------------------- --->
 
-## Quickstart
+## Installation 
+
+```bash
+pip install sca3s_cli
+```
+
+## Configuration
+
+- SCA3S CLI links to a pre-existing SCA3S account via an API token which can be obtained via the user profile page.
+- Once a token is obtained and `sca3s-cli` installed, edit the config file in `~/.sca3s/config` as follows:
+
+```bash
+[default]
+token
+```
+
+This will link the cli to your SCA3S account. If you possess multiple SCA3S accounts you can add additional tokens
+with friendly names to the config file and utilise these tokens via the `scope` parameter in the cli.
 
 <!--- -------------------------------------------------------------------- --->
 
@@ -68,3 +85,4 @@ This work has been supported in part
   programme.
 
 <!--- -------------------------------------------------------------------- --->
+
