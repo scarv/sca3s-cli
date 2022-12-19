@@ -1,0 +1,3 @@
+[submodule "extern/sca3s-middleware"]
+	path = extern/sca3s-middleware
+	url = git@github.com:scarv/sca3s-middleware.git
