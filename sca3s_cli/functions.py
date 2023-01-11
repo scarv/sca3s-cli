@@ -5,7 +5,7 @@ from rich.table import Table
 from rich.console import Console
 from sca3s_cli.parser import get_token
 from datetime import datetime, timezone
-from classes.middleware_status import MWStatus
+from sca3s_cli.classes.middleware_status import MWStatus
 
 def submit_job(args):
     """
