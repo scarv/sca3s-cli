@@ -32,3 +32,7 @@ def main():
     else:
         rprint('Requested function is not defined.')
         return 1
+
+
+if __name__ == '__main__':
+    main()

@@ -5,7 +5,7 @@ from rich.table import Table
 from rich.console import Console
 from sca3s_cli.parser import get_token
 from datetime import datetime, timezone
-
+from classes.middleware_status import MWStatus
 
 def submit_job(args):
     """
@@ -34,7 +34,7 @@ def list_jobs(args):
     jobs = res.json()['jobs']
     console = Console()
     table = Table(show_header=True, header_style="bold blue")
-    table.add_column("ID", style="dim", width=12)
+    table.add_column("ID", style="dim")
     table.add_column("Job Type")
     table.add_column("Device ID")
     table.add_column("Driver ID")
@@ -44,14 +44,14 @@ def list_jobs(args):
     table.add_column("Status")
     for job in jobs:
         table.add_row(
-            job['job_id'],
+            job['job_id'][:10],
             job['job_type'],
             job['device_id'],
             job['driver_id'],
             str(job['trace_spec']['count_major']),
             _timestamp_parser(job['submit_time']),
             _timestamp_parser(job['expiry_time']),
-            str(job['status'])
+            str(MWStatus.build(job['status']).describe())
         )
     console.print(table)
 
@@ -68,7 +68,7 @@ def get_job(args):
     job = res.json()
     console = Console()
     table = Table(show_header=True, header_style="bold blue")
-    table.add_column("ID", style="dim", width=12)
+    table.add_column("ID", style="dim")
     table.add_column("Job Type")
     table.add_column("Device ID")
     table.add_column("Driver ID")
@@ -77,14 +77,14 @@ def get_job(args):
     table.add_column("Expiry Time")
     table.add_column("Status")
     table.add_row(
-        job['job_id'],
+        job['job_id'][:10],
         job['job_type'],
         job['device_id'],
         job['driver_id'],
         str(job['trace_spec']['count_major']),
         _timestamp_parser(job['submit_time']),
         _timestamp_parser(job['expiry_time']),
-        str(job['status'])
+        str(MWStatus.build(job['status']).describe())
     )
     console.print(table)
 
