@@ -22,7 +22,7 @@ with open('README.md') as fd:
 
 setup(
     name='sca3s_cli',
-    version='1.0.4',
+    version='1.0.5',
     author='James Webb',
     author_email='james.webb@bristol.ac.uk',
     license='Apache2',
